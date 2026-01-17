@@ -1,0 +1,110 @@
+/* =====================
+   Responsive (Tablet / Mobile)
+===================== */
+@media (max-width: 900px) {
+  .hero,
+  .about2__hero {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .homeShell {
+    min-height: auto;
+    padding: 26px 0 14px;
+  }
+
+  .visual.visual--avatar {
+    width: 200px;
+    height: 200px;
+  }
+
+  .visual--float {
+    animation: none;
+    transform: none;
+  }
+
+  .tags { gap: 12px 16px; }
+
+  .grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+  /* Mobile navbar: horizontal scroll instead of wrapping */
+  .nav__inner { gap: 10px; }
+
+  .nav__brandBtn {
+    flex: 0 0 auto;
+    padding: 8px 6px;
+  }
+
+  .nav__links {
+    flex: 1 1 auto;
+    justify-content: flex-start;
+
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+
+    gap: 8px;
+    padding: 0 2px;
+    min-width: 0;
+  }
+
+  .nav__links::-webkit-scrollbar { height: 0; }
+
+  .nav__linkBtn,
+  .nav__links a {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    padding: 8px 10px;
+    border-radius: 12px;
+  }
+
+  /* Mobile: let page naturally grow */
+  html, body, .app {
+    height: auto;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .container {
+    min-height: auto;
+    height: auto;
+
+    padding-left: 16px;
+    padding-right: 16px;
+
+    /* buffer space before footer */
+    padding-bottom: 60px;
+  }
+
+  /* Mobile: reduce shadows */
+  .panel,
+  .card {
+    box-shadow: none;
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  /* Mobile: prevent “image sticks to bottom-right” feeling */
+  .hero__right,
+  .about2__right {
+    justify-items: center;
+    align-items: center;
+  }
+
+  .visual {
+    width: 100%;
+    max-width: 360px;
+    padding: 10px;
+  }
+
+  .visual__img {
+    width: 100%;
+    height: auto;
+    transform: none;
+  }
+
+  /* Mobile footer spacing */
+  .footer__inner { padding: 0 16px; }
+}
