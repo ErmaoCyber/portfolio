@@ -2,12 +2,18 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+
+    <!-- public/ 下资源用根路径引用更稳 -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>portfolio</title>
+    <title>Portfolio</title>
   </head>
   <body>
+    <!-- React 挂载点 -->
     <div id="root"></div>
+
+    <!-- Vite 入口 -->
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
