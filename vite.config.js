@@ -3,7 +3,8 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
-  base: "/portfolio/",
+  base: "/",
+  // base: "/portfolio/",
 
   // 手机/局域网设备能访问 dev server
   server: {

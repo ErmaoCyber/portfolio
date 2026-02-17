@@ -7,7 +7,7 @@ export default function Blog() {
         <p className="panel__subtitle muted">Coming soon.</p>
       </header>
 
-      <div className="panel__body muted">You can later add posts, tags, and a simple markdown workflow.</div>
+      <div className="panel__body muted">---</div>
     </section>
   );
 }
