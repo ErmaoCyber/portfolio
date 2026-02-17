@@ -1,5 +1,5 @@
 /* =====================
-   6) Home / Hero
+   Home / Hero
 ===================== */
 .homeShell {
   min-height: calc(100vh - var(--nav-h) - 120px);
@@ -68,9 +68,8 @@
   margin-right: auto;
 }
 
-
 /* =====================
-   8) Hero Right / Visual
+   Hero Right / Visual
 ===================== */
 .hero__right {
   display: grid;
@@ -182,9 +181,8 @@
 
 .visual.visual--avatar .visual__img { display: none; }
 
-
 /* =====================
-   12) About Page (KEEP ORIGINAL DESIGN)
+   About Page (KEEP ORIGINAL DESIGN)
 ===================== */
 .about2__hero {
   display: grid;
