@@ -7,10 +7,9 @@ export const PROJECTS = [
     id: "meeting-room-reservation-api",
     featured: true,
     title: "Meeting Room Reservation API",
-    oneLiner:
-      ".NET Web API for meeting room scheduling with conflict detection and layered architecture.",
+    oneLiner: ".NET Web API for conflict-safe meeting room reservations.",
     desc:
-      "A backend service that handles meeting room reservations with time-slot overlap validation. Built with a clean layered structure where booking rules live in the service layer to ensure consistent behavior across clients.",
+      "Implements scheduling rules and overlap validation in the service layer to keep bookings consistent across clients.",
     year: "2026",
     status: "Active",
     tags: [".NET", "C#", "ASP.NET Core", "EF Core", "Scheduling", "Validation"],
@@ -20,9 +19,9 @@ export const PROJECTS = [
       docs: ["Swagger / OpenAPI"],
     },
     highlights: [
-      "Prevents double-booking via time-range overlap validation",
-      "Layered architecture (Controller → Service → Repository → DB)",
-      "Swagger UI for interactive API exploration and testing",
+      "Conflict detection to prevent overlapping bookings",
+      "Service-layer validation and clear REST API design",
+      "Swagger UI for quick testing and onboarding",
     ],
     repoUrl: "https://github.com/ErmaoCyber/meeting-room-reservation-api",
     demoUrl: "",
@@ -33,10 +32,9 @@ export const PROJECTS = [
     id: "bank-account-service-api",
     featured: false,
     title: "Bank Account Service API",
-    oneLiner:
-      "Spring Boot REST API for account operations and transactional money transfers.",
+    oneLiner: "Spring Boot API with transactional account operations.",
     desc:
-      "A banking-style backend service implementing deposits, withdrawals, and transfers with transactional consistency. Business rules and validation are enforced in the service layer to keep balances correct and auditable.",
+      "Demonstrates atomic transfers and rule enforcement using a layered service design and persistent transaction records.",
     year: "2025",
     status: "Active",
     tags: ["Java", "Spring Boot", "JPA", "Transactions", "PostgreSQL", "Swagger"],
@@ -47,9 +45,9 @@ export const PROJECTS = [
       build: ["Maven"],
     },
     highlights: [
-      "Transactional transfers to ensure atomic balance updates",
-      "Business rules like overdraft prevention enforced in service layer",
-      "Swagger UI for API testing and onboarding",
+      "Transactional money transfers with atomic balance updates",
+      "Service-layer business rules (e.g., overdraft prevention)",
+      "Audit-style transaction history for traceability",
     ],
     repoUrl: "https://github.com/ErmaoCyber/bank-account-service-api",
     demoUrl: "",
@@ -60,10 +58,9 @@ export const PROJECTS = [
     id: "time-series-backtester",
     featured: true,
     title: "Time Series Backtester",
-    oneLiner:
-      "Python backtesting engine for evaluating decision rules on historical time-series data.",
+    oneLiner: "Python backtesting engine with reproducible experiment runs.",
     desc:
-      "A reproducible experiment system that evaluates rule-based strategies using historical market data. The engine separates signal generation from execution and forces trades at the next-day open (t+1) to avoid look-ahead bias. Includes transaction costs, performance metrics, and risk analysis.",
+      "Runs rule-based strategies with t+1 execution, transaction costs, and standard performance metrics using historical market data.",
     year: "2026",
     status: "Active",
     tags: [
@@ -81,9 +78,9 @@ export const PROJECTS = [
       data_source: ["Yahoo Finance (yfinance)"],
     },
     highlights: [
-      "t+1 execution model to prevent look-ahead bias",
-      "Config-driven experiment reproducibility (data + config hashing)",
-      "Metrics: return, Sharpe ratio, max drawdown",
+      "t+1 execution to reduce look-ahead bias",
+      "Config-driven runs (YAML) and reproducible outputs",
+      "Metrics: total return, Sharpe ratio, max drawdown",
     ],
     repoUrl: "https://github.com/ErmaoCyber/time-series-backtester",
     demoUrl: "",
