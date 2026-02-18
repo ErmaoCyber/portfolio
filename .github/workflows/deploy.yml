@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy website
 
 on:
   push:
@@ -6,18 +6,17 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
-  group: "pages"
+  group: deploy-site
   cancel-in-progress: true
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
+      - name: Checkout portfolio
         uses: actions/checkout@v4
 
       - name: Setup Node
@@ -26,24 +25,24 @@ jobs:
           node-version: 20
           cache: npm
 
-      - name: Install
+      - name: Install deps
         run: npm ci
 
       - name: Build
         run: npm run build
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: dist
+      - name: Push dist to ermaocyber.github.io
+        env:
+          DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
+        run: |
+          git clone https://x-access-token:${DEPLOY_TOKEN}@github.com/ErmaoCyber/ermaocyber.github.io.git site
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          rm -rf site/*
+          cp -r dist/* site/
+
+          cd site
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "Deploy from portfolio ($GITHUB_SHA)" || echo "No changes to deploy"
+          git push
